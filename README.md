@@ -1,6 +1,6 @@
 # Calculator
 
-Very simple browser calculator.This project is part of the "Odin Project" curriculum.
+Very simple browser calculator. This project is part of the "Odin Project" curriculum.
 
 *How to use:* Check out the latest GitHub pages deplyoment. Click around and have fun!
 
