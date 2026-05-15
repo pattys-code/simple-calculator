@@ -1,0 +1,58 @@
+html * {
+  font-family: 'Courier New', Courier, monospace;
+  background-color: rgb(236, 230, 230);
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+button {
+    border-radius: 15px;
+    border: none;
+    height: 40px;
+    width: 40px;
+}
+
+button:hover {
+    background-color: rgb(190, 190, 190);
+}
+
+.calculator {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    padding: 20px;
+    background-color: rgb(18, 18, 18);
+    border-radius: 10px;
+    width: 190px;
+}
+
+.display {
+    background-color: inherit;
+}
+
+.current {
+    border-radius: 0 0 5px 5px;
+    background-color: grey;
+    height: 20px;
+    font-size: 20px;
+    text-align: right;
+    padding: 5px;
+}
+
+.history {
+    border-radius: 5px 5px 0 0;
+    background-color: grey;
+    text-align: right;
+    padding: 5px;
+}
+
+.button-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    background-color: inherit;
+}
