@@ -26,6 +26,11 @@ function round(number) {
   return Math.round(number * 1000) / 1000
 }
 
+// display current variable state
+function displayCurrent () {
+    current.textContent = curr_number1+curr_operator+curr_number2;
+}
+
 // calculate result and empty variables
 function calculate () {
     curr_number1 = Number(curr_number1);
@@ -37,7 +42,7 @@ function calculate () {
     curr_number1 = round(curr_number1);
     curr_number2 ='';
     curr_operator ='';
-    current.textContent = curr_number1+curr_operator+curr_number2;
+    displayCurrent();
 }
 
 // clear all input
@@ -55,7 +60,7 @@ numberBtns.forEach(button => {
         else if (curr_operator!=='') {
             curr_number2 += +button.textContent;
         }
-        current.textContent = curr_number1+curr_operator+curr_number2;
+        displayCurrent();
     })
 })
 
@@ -66,7 +71,7 @@ operatorBtns.forEach(button => {
         }
         if (curr_number1!=='') {
             curr_operator = button.textContent;
-            current.textContent = curr_number1+curr_operator+curr_number2;
+            displayCurrent();
         }
     })
 })
@@ -87,7 +92,7 @@ resultBtn.addEventListener('click', () => {
 
 clearBtn.addEventListener('click', () => {
     clear();
-    current.textContent = curr_number1+curr_operator+curr_number2;
+    displayCurrent();
 })
 
 
