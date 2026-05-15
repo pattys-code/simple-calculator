@@ -38,7 +38,7 @@ function calculate () {
     if (curr_operator==='+') {curr_number1=add()}
     else if (curr_operator==='-') {curr_number1=subtract()}
     else if (curr_operator==='x') {curr_number1=multiply()}
-    else if (curr_operator==='%') {curr_number1=divide()};
+    else if (curr_operator==='/') {curr_number1=divide()};
     curr_number1 = round(curr_number1);
     curr_number2 ='';
     curr_operator ='';
