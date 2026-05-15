@@ -38,6 +38,12 @@ function calculate () {
     current.textContent = curr_number1+curr_operator+curr_number2;
 }
 
+function clear () {
+    curr_number1 = '';
+    curr_number2 ='';
+    curr_operator ='';
+}
+
 // numbers 
 numberBtns.forEach(button => {
     button.addEventListener('click', () => {
@@ -71,15 +77,22 @@ operatorBtns.forEach(button => {
     })
 })
 
-resultBtn.addEventListener('click', ()=> {
-    calculate();
-    curr_number1 ='';
+resultBtn.addEventListener('click', () => {
+    if (curr_number1==='' || curr_number2==='' || curr_operator==='') {
+        return;
+    }
+    if (curr_number1==='0' && curr_number2==='0' && curr_operator==='%'){
+        current.textContent = 'You cannot divide 0 by 0. Try something else! :)';
+        clear();
+    }
+    else {
+        calculate();
+        curr_number1 ='';
+    }
 })
 
 clearBtn.addEventListener('click', () => {
-    curr_number1 = '';
-    curr_number2 ='';
-    curr_operator ='';
+    clear();
     current.textContent = curr_number1+curr_operator+curr_number2;
 })
 
