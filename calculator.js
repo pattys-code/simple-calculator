@@ -21,10 +21,12 @@ function divide () {
     return curr_number1 / curr_number2;
 }
 
+// round long decimals for the sake of simplicity
 function round(number) {
   return Math.round(number * 1000) / 1000
 }
 
+// calculate result and empty variables
 function calculate () {
     curr_number1 = Number(curr_number1);
     curr_number2 =Number(curr_number2);
@@ -38,13 +40,13 @@ function calculate () {
     current.textContent = curr_number1+curr_operator+curr_number2;
 }
 
+// clear all input
 function clear () {
     curr_number1 = '';
     curr_number2 ='';
     curr_operator ='';
 }
 
-// numbers 
 numberBtns.forEach(button => {
     button.addEventListener('click', () => {
         if (curr_operator==='') {
@@ -54,13 +56,9 @@ numberBtns.forEach(button => {
             curr_number2 += +button.textContent;
         }
         current.textContent = curr_number1+curr_operator+curr_number2;
-        console.log(curr_number1);
-        console.log(curr_number2);
-        console.log(curr_operator);
     })
 })
 
-//opeartors
 operatorBtns.forEach(button => {
     button.addEventListener('click', () => {
         if (curr_number2!=='') {
@@ -70,10 +68,6 @@ operatorBtns.forEach(button => {
             curr_operator = button.textContent;
             current.textContent = curr_number1+curr_operator+curr_number2;
         }
-        
-        console.log(curr_number1);
-        console.log(curr_number2);
-        console.log(curr_operator);
     })
 })
 
