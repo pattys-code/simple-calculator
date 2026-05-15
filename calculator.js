@@ -21,13 +21,18 @@ function divide () {
     return curr_number1 / curr_number2;
 }
 
+function round(number) {
+  return Math.round(number * 1000) / 1000
+}
+
 function calculate () {
     curr_number1 = Number(curr_number1);
     curr_number2 =Number(curr_number2);
     if (curr_operator==='+') {curr_number1=add()}
     else if (curr_operator==='-') {curr_number1=subtract()}
     else if (curr_operator==='x') {curr_number1=multiply()}
-    else if (curr_operator==='%') {curr_number1=divide()}
+    else if (curr_operator==='%') {curr_number1=divide()};
+    curr_number1 = round(curr_number1);
     curr_number2 ='';
     curr_operator ='';
     current.textContent = curr_number1+curr_operator+curr_number2;
@@ -69,6 +74,13 @@ operatorBtns.forEach(button => {
 resultBtn.addEventListener('click', ()=> {
     calculate();
     curr_number1 ='';
+})
+
+clearBtn.addEventListener('click', () => {
+    curr_number1 = '';
+    curr_number2 ='';
+    curr_operator ='';
+    current.textContent = curr_number1+curr_operator+curr_number2;
 })
 
 
